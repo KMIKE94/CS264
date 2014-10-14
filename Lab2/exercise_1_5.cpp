@@ -9,13 +9,14 @@ void print_string_array(char str[]){
 	for(int i = -1; i < length; ++i){
 		cout << str[i];
 	}
-	cout << endl;
+	cout << " 	 Printed with str[i] " <<endl;
 }
 
 void print_string_ptr(char *str){
 	for(int i = -1; i < length; ++i){
 		cout << *(str + i);
 	}
+	cout << "	 Printed with *(str + i) " << endl;
 }
 
 int main(){
@@ -24,5 +25,4 @@ int main(){
 	str2 = str1;
 	print_string_array(str1);
 	print_string_ptr(str2);
-	cout << endl;
 }
