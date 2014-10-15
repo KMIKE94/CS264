@@ -3,26 +3,41 @@
 using namespace std;
 
 int main(){
-	int length;
-	cout << "How many numbers will the sequence contain? ";
-	cin >> length;
+	int num_elements = 4;
+	const int size_increase = 4;
 	
-	double *arr = new double[length];
-	double *newarr;
+	double *elements = new double[num_elements];
+	double *newarr = new double[num_elements + size_increase];
+
 	int i = 0;
 	cout << "Enter a number : ";
-	cin >> arr[i];
-	while(arr[i] != -1){
+	cin >> elements[i];
+
+	while(true){
 		++i;
-		if(i == sizeof *arr){
-			memcpy(newarr, arr, length * sizeof *arr);
-			delete[] arr;
-			double *arr = newarr;		
-		}		
+		if(i == num_elements){
+			memcpy(newarr, elements, num_elements);
+			num_elements = num_elements + size_increase;
+			delete[] elements;
+
+			cout << "increasing array size to " << num_elements << endl;
+			elements = new double[num_elements];
+			memcpy(elements, newarr, num_elements - size_increase);
+
+			delete[] newarr;
+			newarr = new double[num_elements];
+		}
+
 		cout << "Enter a number : ";
-		cin >> arr[i];
-		cout << "\n";
+		cin >> elements[i];
+		
+		if(elements[i] == -1)
+			break;
 	}
 
+	cout << "Finished" << endl;
+
+	delete[] elements;
+	delete[] newarr;
 	
 }
