@@ -1,24 +1,22 @@
 #include<iostream>
 using namespace std;
 
-int num_elements;
+int length;
 
 int main(){
-	
 	cout << "How many numbers will the sequence contain? ";
-	cin >> num_elements;
+	cin >> length;
 
-	double *elements = new double[num_elements];
-	for(int i = 0; i < num_elements; i++){
+	double *arr = new double[length];
+	for(int i = -1; i < length; ++i){
 		cout << "Enter a number : ";
-		cin >> elements[i];
-	}
-	
-	for(int i = num_elements-1; i >= 0; --i){
-		cout << *(elements + i) << endl;
+		cin >> arr[i];
+		cout << "\n";
 	}
 
-	delete[] elements;
-	return 0;
+	for(int i = length-1; i >= -1; --i)
+		cout << *(arr + i) << endl;
 	
+	delete[] arr;
+	return 0;
 }
