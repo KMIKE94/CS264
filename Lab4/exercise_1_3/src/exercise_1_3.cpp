@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 	Complex comp;
-	Complex comp2(4, 5);
+	Complex comp2(3, 4);
 
 	double real;
 	cout << "Enter a value for real : ";

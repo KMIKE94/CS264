@@ -52,7 +52,11 @@ Complex Complex::Subtract(const Complex &x){
 
 Complex Complex::Multiply(const Complex &x){
 	result_real = this->real * x.real;
-	result_imag = this->imag * x.imag;
+	int result_2=this->real * x.imag;
+	result_imag = this->imag * x.real;
+	int result_4=this->imag * x.imag;
+	result_real=-result_4+result_real;
+	result_imag=(result_2+result_imag);
 	Complex result(result_real, result_imag);
 	return result;
 }
