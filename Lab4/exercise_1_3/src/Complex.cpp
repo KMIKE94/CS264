@@ -1,0 +1,74 @@
+#include"Complex.h"
+#include<iostream>
+using namespace std;
+
+double result_real;
+double result_imag;
+
+Complex temp;
+Complex::Complex(){
+	real = 0;
+	imag = 0;
+}
+
+Complex::Complex(double a, double b){
+	real = a;
+	imag = b;
+}
+
+void Complex::print(){
+	cout << "(" << this->real << ", " << this->imag << ")";
+}
+
+double Complex::getReal(){
+	return real;
+}
+
+void Complex::setReal(double a){
+	real = a;
+}
+
+double Complex::getImag(){
+	return imag;
+}
+
+void Complex::setImag(double b){
+	imag = b;
+}
+
+Complex Complex::Add(const Complex &x){
+	result_real = this->real + x.real;
+	result_imag = this->imag + x.imag;
+	Complex result(result_real, result_imag);
+	return result;
+}
+
+Complex Complex::Subtract(const Complex &x){
+	result_real = this->real - x.real;
+	result_imag = this->imag - x.imag;
+	Complex result(result_real, result_imag);
+	return result;
+}
+
+Complex Complex::Multiply(const Complex &x){
+	result_real = this->real * x.real;
+	result_imag = this->imag * x.imag;
+	Complex result(result_real, result_imag);
+	return result;
+}
+
+
+Complex& Complex::operator+(const Complex &x){
+	temp = this->Add(x);
+	return temp;
+}
+
+Complex& Complex::operator-(const Complex &x){
+	temp = this->Subtract(x);
+	return temp;
+}
+
+Complex& Complex::operator*(const Complex &x){
+	temp = this->Multiply(x);
+	return temp;
+}
