@@ -10,7 +10,7 @@ using std::endl;
 
 // constructor
 Racecar::Racecar(string n, string c, string s)
-/* Write code to call base-class constructor */
+:Car(n,s)
 {
 	/* Write code to copy s into private data member sponsor */
 	this->sponsor = s;
@@ -36,13 +36,17 @@ void Racecar::useParachute() {
 void Racecar::print() const {
 	/* Write statement that calls base-class member function print here */
 	cout << getName() << " also has " << gearbox
-			<< " gears and is sponsored by " << sponsor << ". ";
+			<< " gears and is sponsored by " << sponsor << ". " << endl;
+
+	cout << "Car: " << this->getName() << " is " << this->getColor() << " and has a "
+	        << this->getEngineValves() << "-valve engine. MAX SPEED = "
+	        << this->getMaxSpeed() << " mph. " << endl;
 
 if ( parachuteDeployed )
-	cout << /* Write statement that accesess base-class version of name here */" "
+	cout << this->getName()
 			<< " has used its parachute." << endl;
 else
-	cout << /* Write statement that accesess base-class version of name here */ " "
+	cout << this->getName()
 			<< " has not used its parachute." << endl;
 
 } // end function print
