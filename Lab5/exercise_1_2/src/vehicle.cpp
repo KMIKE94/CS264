@@ -10,8 +10,12 @@ using std::endl;
 // constructor
 Vehicle::Vehicle( const int doors, const int cylinders, 
    string color, double initialFuel, 
-   const int transmission ) 
-   /* Write the body for Vehicle's constructor */
+   const int transmission ) : numberOfDoors(doors), numberOfCylinders(cylinders),
+   	  transmissionType(transmission){
+
+	vehicleColor = color;
+	this->setFuelLevel(initialFuel);
+	className = "Car";
  
 } // end class Vehicle constructor
 

@@ -13,8 +13,8 @@ class Taxi : public Vehicle {
 
 public:
    Taxi( double );
-   /* Write prototype for hasCustomers */
-   /* Write prototype for setCustomers */
+   bool hasCustomers() const;
+   bool setCustomers();
 
 private:
    bool customers;

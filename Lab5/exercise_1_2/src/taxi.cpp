@@ -11,9 +11,14 @@ Taxi::Taxi( double f )
 
 } // end class Taxi constructor
 
-/* Write definition for setCustomers */
+bool Taxi::hasCustomers() const{
+	return customers;
+}
 
-/* Write definition for hasCustomers */
+bool Taxi::setCustomers(){
+	this->customers = true;
+	return customers;
+}
 
 // function operator<< definition
 ostream &operator<<( ostream &output, const Taxi &t )
@@ -29,7 +34,7 @@ ostream &operator<<( ostream &output, const Taxi &t )
           << "\n\tFuel level: " 
           << t.getFuelLevel() << "\n";
 
-   if ( /* Write statement to check if there are passengers */ )
+   if(t.customers)
       output << "\tThe taxi has passengers.\n";
 
    else

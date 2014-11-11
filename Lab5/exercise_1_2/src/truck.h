@@ -1,8 +1,21 @@
 // Chapter 9 of C++ How to Program
 // truck.h
 
-/* Write contents of truck.h, which defines class Truck */
+#include<iostream>
 
+#include "vehicle.h"
+
+class Truck : public Vehicle{
+	friend ostream &operator<<( ostream &output, const Truck &t );
+public:
+	Truck(double);
+
+	bool hasCargo() const;
+	void setCargo( bool c );
+
+private:
+	bool cargo;
+};
 
 
 /**************************************************************************
